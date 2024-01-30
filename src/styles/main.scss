@@ -1,0 +1,16 @@
+/* Базовые подключения */
+@import "vendor";
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "global";
+
+@import "extends";
+@import "template";
+
+/* Компоненты */
+
+/* Секции */
+@import "./sections/features";
+
+/* Модальные окна */

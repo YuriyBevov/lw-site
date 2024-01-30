@@ -1,0 +1,28 @@
+.lw {
+  &-container {
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+    max-width: var(--container-width);
+  }
+
+  // &-container-fluid {
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   padding: 0 var(--container-offset);
+  //   max-width: var(--container-fluid-width);
+  // }
+
+  &-section-title {
+    font-size: clamp(20px, 3vw, 48px);
+    font-family: var(--secondary-font);
+    margin: 0;
+    margin-bottom: clamp(12px, 2.7vw, 32px);
+    color: var(--primary);
+  }
+
+  &-subtitle {
+  }
+
+  &-main-text {
+  }
+}

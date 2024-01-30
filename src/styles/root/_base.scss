@@ -1,0 +1,13 @@
+:root {
+  --base-font: "Inter", sans-serif;
+  --secondary-font: "RedOctober", sans-serif;
+
+  --content-width: 1720px;
+  --container-offset: clamp(15px, 5vw, 100px);
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // --content-fluid-width: 1790px;
+  // --container-fluid-width: calc(
+  //   var(--content-fluid-width) + (var(--container-offset) * 2)
+  // );
+}

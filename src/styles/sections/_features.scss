@@ -1,0 +1,10 @@
+.features {
+  &__list {
+    @extend .list-reset;
+  }
+
+  &__list-item {
+    span {
+    }
+  }
+}
