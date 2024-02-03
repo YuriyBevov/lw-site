@@ -1,0 +1,24 @@
+.feature-card {
+  @extend .flex-column;
+  gap: 24px;
+  padding: 16px;
+  border-radius: 10px;
+
+  &-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  &-title {
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  &-text {
+    color: var(--white);
+  }
+}
+
+//display: contents;

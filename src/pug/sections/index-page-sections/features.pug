@@ -1,6 +1,20 @@
-section.features
-  .lw-container 
-    h2.lw-section-title Наши преимущества
+include ../../mixins/main-btn
+include ../../mixins/feature-card
 
-    ul.features__list
-      li.features__list-item
+include ../../content/feature-list
+
+section.features
+  .lw-container.features__container
+    .features__section
+      h2.lw-section-title Наши преимущества
+
+      +main-btn({
+        text: 'Связаться с нами',
+        cls: 'main-btn--outlined'
+      })
+
+    .features__section
+      ul.features__list
+        each item of featuresList 
+          li.features__list-item
+            +feature-card(item)

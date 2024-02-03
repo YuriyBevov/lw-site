@@ -1,0 +1,5 @@
+mixin feature-card(data)
+    .feature-card
+        img(src=`./assets/img/mock/${data.icon}` alt= data.title width="50" height="50").feature-card-icon
+        span.feature-card-title!= data.title
+        span.feature-card-text!= data.text

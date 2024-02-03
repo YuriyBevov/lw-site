@@ -1,3 +1,21 @@
+include ../../mixins/main-btn
+
 section.intro
   .lw-container 
-    h1.lw-section-title Разработка и создание интенет-сайтов
+    h1.lw-section-title Разработка и создание интернет-сайтов
+
+    +main-btn(
+      {
+        text: 'Отправить заявку',
+        cls: '',
+      }
+    )
+
+    +main-btn(
+      {
+        text: 'Связаться с нами',
+        cls: 'main-btn--outlined',
+      }
+    )
+
+

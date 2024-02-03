@@ -9,8 +9,8 @@ const PATHS = {
   },
 
   images: {
-    src: `${SOURCE_PATH}assets/img/*.{jpg,jpeg,png}`,
-    watchSrc: `${SOURCE_PATH}assets/img/*.{jpg,jpeg,png}`,
+    src: `${SOURCE_PATH}assets/img/**/*.{jpg,jpeg,png,svg}`,
+    watchSrc: `${SOURCE_PATH}assets/img/**/*.{jpg,jpeg,png,svg}`,
     dest: `${BUILD_PATH}assets/img/`,
   },
 

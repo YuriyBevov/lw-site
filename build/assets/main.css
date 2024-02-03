@@ -347,7 +347,7 @@ template {
 
 :root {
   --base-font: "Inter", sans-serif;
-  --secondary-font: "RedOctober", sans-serif;
+  --secondary-font: "StalinistOne", sans-serif;
   --content-width: 1720px;
   --container-offset: clamp(15px, 5vw, 100px);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -356,6 +356,7 @@ template {
 :root {
   --white: #fff;
   --black: #000000;
+  --dark: #161414;
   --primary: #a2d729;
   --main-bg-color: #161414;
 }
@@ -366,7 +367,14 @@ template {
   --main-scrollbar-thumb-color: var(--accent);
 }
 
+:root {
+  --main-transition: 0.25s ease;
+}
+
 /* stylelint-disable */
+/* stylelint-disable */
+/*down*/
+/*up*/
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter-Light.woff") format("woff"), url("../assets/fonts/Inter-Light.woff2") format("woff2");
@@ -403,16 +411,9 @@ template {
   font-style: normal;
 }
 @font-face {
-  font-family: "RedOctober";
-  src: url("../assets/fonts/RedOctober-Regular.woff") format("woff"), url("../assets/fonts/RedOctober-Regular.woff2") format("woff2");
+  font-family: "StalinistOne";
+  src: url("../assets/fonts/StalinistOne-Regular.woff") format("woff"), url("../assets/fonts/StalinistOne-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "RedOctober";
-  src: url("../assets/fonts/RedOctober-Bold.woff") format("woff"), url("../assets/fonts/RedOctober-Bold.woff2") format("woff2");
-  font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
@@ -467,7 +468,7 @@ a {
   flex-wrap: wrap;
 }
 
-.flex-centered-content {
+.flex-centered-content, .main-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -479,7 +480,7 @@ a {
   justify-content: center;
 }
 
-.flex-column {
+.flex-column, .feature-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,7 +519,7 @@ a {
   border: 0;
 }
 
-.btn-reset {
+.btn-reset, .main-btn {
   border: none;
   padding: 0;
   background: transparent;
@@ -550,11 +551,12 @@ a {
 }
 
 /*transitions*/
-.hover-opacity {
+.hover-opacity, .main-btn {
+  opacity: 1;
   -webkit-transition: opacity var(--main-transition);
   transition: opacity var(--main-transition);
 }
-.hover-opacity:hover, .hover-opacity:focus {
+.hover-opacity:hover, .main-btn:hover, .hover-opacity:focus, .main-btn:focus {
   opacity: 0.7;
 }
 
@@ -571,5 +573,66 @@ a {
   color: var(--primary);
 }
 /* Компоненты */
+.main-btn {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  width: 100%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 18px 24px 14px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  color: var(--dark);
+  background-color: var(--primary);
+}
+.main-btn--outlined {
+  text-transform: initial;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  background-color: transparent;
+}
+
+.feature-card {
+  gap: 24px;
+  padding: 16px;
+  border-radius: 10px;
+}
+.feature-card-icon {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.feature-card-title {
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  color: var(--white);
+}
+.feature-card-text {
+  color: var(--white);
+}
+
 /* Секции */
+.features__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 5fr;
+  grid-template-columns: 3fr 5fr;
+  grid-gap: 60px;
+  /* up/down desktop-lg(1920),desktop(1440),laptop(1140),tablet-lg(960),tablet(768),mobile-lg(534)*/
+}
+@media (max-width: 1023px) {
+  .features__container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.features__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
 /* Модальные окна */

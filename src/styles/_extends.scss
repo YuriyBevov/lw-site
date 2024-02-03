@@ -27,12 +27,12 @@
 /*scroll*/
 .main-scroll {
   &::-webkit-scrollbar {
-      background-color: var(--main-scrollbar-color);
-      width: var(--main-scrollbar-width);
+    background-color: var(--main-scrollbar-color);
+    width: var(--main-scrollbar-width);
   }
 
   &::-webkit-scrollbar-thumb {
-      background-color: var(--main-scrollbar-thumb-color);
+    background-color: var(--main-scrollbar-thumb-color);
   }
 }
 
@@ -85,6 +85,7 @@
 
 /*transitions*/
 .hover-opacity {
+  opacity: 1;
   transition: opacity var(--main-transition);
 
   &:hover,
