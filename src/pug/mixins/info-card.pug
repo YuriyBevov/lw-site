@@ -1,0 +1,6 @@
+mixin info-card(data)
+    .info-card(class= data.cls ? data.cls : null)
+        img(src=`./assets/img/mock/${data.icon}` alt= data.title width="50" height="50").info-card-icon
+        .info-card__content
+            span.info-card-title!= data.title
+            span.info-card-text!= data.text

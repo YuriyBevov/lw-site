@@ -1,10 +1,9 @@
 include ../../mixins/main-btn
-include ../../mixins/feature-card
-
+include ../../mixins/info-card
 include ../../content/feature-list
 
-section.features
-  .lw-container.features__container
+section.lw-base-section.features
+  .lw-container
     .features__section
       h2.lw-section-title Наши преимущества
 
@@ -17,4 +16,4 @@ section.features
       ul.features__list
         each item of featuresList 
           li.features__list-item
-            +feature-card(item)
+            +info-card(item)

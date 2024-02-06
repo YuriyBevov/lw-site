@@ -1,3 +1,21 @@
+/*grid*/
+
+.base-section-grid {
+  display: grid;
+  grid-template-columns: 8fr 10fr;
+  grid-gap: 50px;
+
+  @include m-b-laptop-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*offsets*/
+
+.base-section-offset {
+  padding: 100px 0;
+}
+
 /* flex*/
 
 .flex-wrap {

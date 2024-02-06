@@ -1,0 +1,7 @@
+.workflow {
+  &__list {
+    @extend .list-reset;
+    @extend .flex-column;
+    gap: 20px;
+  }
+}

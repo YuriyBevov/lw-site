@@ -1,0 +1,7 @@
+@mixin base-section-layout() {
+  @extend .base-section-offset;
+
+  & > * {
+    @extend .base-section-grid;
+  }
+}

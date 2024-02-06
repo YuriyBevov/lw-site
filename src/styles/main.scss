@@ -10,9 +10,13 @@
 
 /* Компоненты */
 @import "./components/main-btn";
-@import "./components/feature-card";
+@import "./components/info-card";
+// @import "./components/feature-card";
+// @import "./components/workflow-card";
 
 /* Секции */
 @import "./sections/features";
+@import "./sections/about";
+@import "./sections/workflow";
 
 /* Модальные окна */

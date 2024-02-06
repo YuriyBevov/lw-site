@@ -448,6 +448,7 @@ body {
   flex-direction: column;
   font-family: var(--base-font);
   font-weight: 400;
+  color: var(--white);
   background-color: var(--main-bg-color);
 }
 
@@ -457,6 +458,26 @@ footer {
 
 a {
   text-decoration: none;
+}
+
+/*grid*/
+.base-section-grid, .lw-base-section > * {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 8fr 10fr;
+  grid-template-columns: 8fr 10fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1023px) {
+  .base-section-grid, .lw-base-section > * {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*offsets*/
+.base-section-offset, .lw-base-section {
+  padding: 100px 0;
 }
 
 /* flex*/
@@ -480,7 +501,7 @@ a {
   justify-content: center;
 }
 
-.flex-column, .feature-card {
+.flex-column, .workflow__list, .info-card__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -507,7 +528,7 @@ a {
 }
 
 /*resets*/
-.list-reset, .features__list {
+.list-reset, .workflow__list, .features__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -593,41 +614,39 @@ a {
   background-color: transparent;
 }
 
-.feature-card {
+.info-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 24px;
   padding: 16px;
   border-radius: 10px;
 }
-.feature-card-icon {
+.info-card--vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.info-card__content {
+  gap: 10px;
+}
+.info-card-icon {
   width: 50px;
   height: 50px;
   -o-object-fit: contain;
   object-fit: contain;
 }
-.feature-card-title {
+.info-card-title {
   font-family: var(--secondary-font);
   font-size: 20px;
-  color: var(--white);
 }
-.feature-card-text {
-  color: var(--white);
+.info-card-text {
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* Секции */
-.features__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 3fr 5fr;
-  grid-template-columns: 3fr 5fr;
-  grid-gap: 60px;
-  /* up/down desktop-lg(1920),desktop(1440),laptop(1140),tablet-lg(960),tablet(768),mobile-lg(534)*/
-}
-@media (max-width: 1023px) {
-  .features__container {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
-}
 .features__list {
   display: -ms-grid;
   display: grid;
@@ -635,4 +654,9 @@ a {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+
+.workflow__list {
+  gap: 20px;
+}
+
 /* Модальные окна */

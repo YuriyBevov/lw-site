@@ -1,0 +1,6 @@
+mixin workflow-card(data)
+    .workflow-card
+        img(src=`./assets/img/mock/${data.icon}` alt= data.title width="50" height="50").workflow-card-icon
+        .workflow-card__content
+            span.workflow-card-title!= data.title
+            span.workflow-card-text!= data.text

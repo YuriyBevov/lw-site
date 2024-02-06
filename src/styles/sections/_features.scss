@@ -1,25 +1,9 @@
 .features {
-  &__container {
-    display: grid;
-    grid-template-columns: 3fr 5fr;
-    grid-gap: 60px;
-
-    /* up/down desktop-lg(1920),desktop(1440),laptop(1140),tablet-lg(960),tablet(768),mobile-lg(534)*/
-    @include m-b-laptop-down {
-      grid-template-columns: 1fr;
-    }
-  }
-
   &__list {
     @extend .list-reset;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  }
-
-  &__list-item {
-    span {
-    }
   }
 }

@@ -25,4 +25,8 @@
 
   &-main-text {
   }
+
+  &-base-section {
+    @include base-section-layout();
+  }
 }

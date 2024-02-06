@@ -1,8 +1,17 @@
-.feature-card {
-  @extend .flex-column;
+.info-card {
+  display: flex;
   gap: 24px;
   padding: 16px;
   border-radius: 10px;
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &__content {
+    @extend .flex-column;
+    gap: 10px;
+  }
 
   &-icon {
     width: 50px;
@@ -13,12 +22,10 @@
   &-title {
     font-family: var(--secondary-font);
     font-size: 20px;
-    color: var(--white);
   }
 
   &-text {
-    color: var(--white);
+    font-size: 18px;
+    font-weight: 300;
   }
 }
-
-//display: contents;

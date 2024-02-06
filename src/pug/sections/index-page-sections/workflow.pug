@@ -1,3 +1,19 @@
-section.workflow
-  .lw-container 
-    h2.lw-section-title Как происходит рабочий процесс
+include ../../mixins/main-btn
+include ../../mixins/info-card
+include ../../content/workflow-list
+
+section.lw-base-section.workflow
+  .lw-container
+    .workflow__section
+      h2.lw-section-title Как происходит рабочий процесс
+
+      +main-btn({
+        text: 'Связаться с нами',
+        cls: 'main-btn--outlined'
+      })
+
+    .workflow__section
+      ul.workflow__list
+        each item of workflowList 
+          li.workflow__list-item
+            +info-card(item)
