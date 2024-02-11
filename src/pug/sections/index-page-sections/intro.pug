@@ -1,21 +1,29 @@
 include ../../mixins/main-btn
 
-section.intro
-  .lw-container 
-    h1.lw-section-title Разработка и создание интернет-сайтов
+section.lw-base-section.intro
+  .lw-container.intro__container
+    .intro__content
+      h1.lw-section-title Разработка и&nbsp;создание интернет-сайтов
 
-    +main-btn(
-      {
-        text: 'Отправить заявку',
-        cls: '',
-      }
-    )
+      p.lw-main-text Ваш сайт - ваша визитная карточка в мире интернета! Доверьте его создание нам и захватите взгляды!
 
-    +main-btn(
-      {
-        text: 'Связаться с нами',
-        cls: 'main-btn--outlined',
-      }
-    )
+      .intro__content-personal
+        +main-btn(
+          {
+            text: 'Отправить заявку',
+            cls: '',
+          }
+        )
+
+        +main-btn(
+          {
+            text: 'Отправить заявку',
+            cls: '',
+          }
+        )
+    
+    img(src="../assets/img/hero-img.png" alt="Littleweb.ru - Разработка и создание интернет-сайтов" width="900" height="600")
+
+
 
 

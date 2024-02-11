@@ -1,0 +1,101 @@
+:root {
+  --accordeon-max-width: 900px;
+  --accordeon-inner-offset: 20px;
+
+  --accordeon-item-bottom-offset: 5px;
+  --accordeon-item-border-radius: 10px;
+  --accordeon-item-bg-color: transparent;
+
+  --accordeon-header-text-color: #ffffff;
+  --accordeon-header-font-family: "Inter";
+  --accordeon-header-font-weight: 500;
+  --accordeon-header-font-style: normal;
+  --accordeon-header-font-size: 20px;
+  --accordeon-header-offset-right: 70px;
+  --accordeon-header-arrow-path: url("../assets/img/accordeon-arrow.svg");
+
+  --accordeon-content-text-color: #ffffff;
+  --accordeon-content-font-weight: 400;
+  --accordeon-content-font-style: normal;
+  --accordeon-content-font-size: 16px;
+
+  --accordeon-content-block-transition: 0.3s linear;
+}
+
+.accordeon {
+  width: 100%;
+  max-width: var(--accordeon-max-width);
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: var(--accordeon-item-bottom-offset);
+    }
+
+    background-color: var(--accordeon-item-bg-color);
+    border-radius: var(--accordeon-item-border-radius);
+
+    &:not(.expanded) .lw-content * {
+      margin: 0;
+    }
+  }
+
+  &-header {
+    font-family: var(--accordeon-header-font-family);
+    font-size: var(--accordeon-header-font-size);
+    font-weight: var(--accordeon-header-font-weight);
+    font-style: var(--accordeon-header-font-style);
+    padding: var(--accordeon-inner-offset);
+    padding-right: var(--accordeon-header-offset-right);
+    color: var(--accordeon-header-text-color);
+
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: var(--accordeon-inner-offset);
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      content: "";
+      background-image: var(--accordeon-header-arrow-path);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: transform var(--accordeon-content-block-transition);
+    }
+  }
+
+  &-content {
+    font-size: var(--accordeon-content-font-size);
+    font-weight: var(--accordeon-content-font-weight);
+    font-style: var(--accordeon-content-font-style);
+    padding: var(--accordeon-inner-offset);
+    color: var(--accordeon-content-text-color);
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: calc(-1 * var(--accordeon-inner-offset));
+
+    transition: all var(--accordeon-content-block-transition);
+  }
+
+  &-item.expanded {
+    .accordeon-content {
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      margin-top: 0;
+    }
+
+    .accordeon-header::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}

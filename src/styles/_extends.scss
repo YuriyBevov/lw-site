@@ -13,7 +13,7 @@
 /*offsets*/
 
 .base-section-offset {
-  padding: 100px 0;
+  padding: clamp(50px, 6vw, 100px) 0;
 }
 
 /* flex*/
