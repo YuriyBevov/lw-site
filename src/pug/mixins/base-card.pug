@@ -1,0 +1,6 @@
+mixin base-card(data)
+  .base-card(class= data.cls ? data.cls : null)
+    .base-card__main!= data.mainContent
+    if data.footerContent
+      .base-card__footer!= data.footerContent
+        

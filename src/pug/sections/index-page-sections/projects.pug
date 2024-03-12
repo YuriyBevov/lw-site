@@ -1,3 +1,17 @@
-section.projects
+include ../../mixins/base-card
+
+section.lw-base-section.projects
   .lw-container 
-    h2.lw-section-title Наши кейсы
+    .projects__section
+      h2.lw-section-title Наши кейсы
+
+    .projects__section
+      +base-card({
+        cls: 'project-card',
+        mainContent: '<img src="./assets/img/mock/project-img.png" width="440" height="275" alt="">',
+        footerContent: `
+          <h3 class="project-card__title">Детский мир</h3>
+          <p class="project-card__text">Интернет - магазин игрушек для детей</p> 
+          <a href="#" class="project-card__link">Посмотреть кейс</a>
+        `
+      })

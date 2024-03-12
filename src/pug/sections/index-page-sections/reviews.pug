@@ -1,3 +1,24 @@
+include ../../mixins/base-card
+
 section.lw-base-section.reviews
   .lw-container
-    h2.lw-section-title Отзывы наших клиентов
+    .reviews__section
+      h2.lw-section-title Отзывы наших клиентов
+
+    .reviews__section
+      +base-card({
+        cls: 'review-card',
+        mainContent: `
+          <div class="review-card__content">
+            <p class="review-card__text">
+              "Во-первых, я хотел бы отметить их профессионализм. Команда агентства дизайнеров обладает глубокими знаниями в области дизайна и пониманием того, как создать эстетически...”
+            </p>
+            <a href="#" class="review-card__link">Читать далее...</a>
+          </div>
+          <div class="review-card__author">
+            <img  class="review-card__author-img" src="./assets/img/user-empty-avatar.png" width="56" height="56" alt="">
+            <span class="review-card__author-name">Константин Константинов</span>
+            <span class="review-card__author-description">Директор группы компаний</span>
+          </div>
+        `,
+      })

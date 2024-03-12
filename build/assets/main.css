@@ -501,7 +501,7 @@ a {
   justify-content: center;
 }
 
-.flex-column, .workflow__list, .intro__content, .info-card__content {
+.flex-column, .workflow__list, .intro__content, .review-card__content, .review-card .base-card__main, .info-card__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,6 +648,90 @@ a {
 .info-card-text {
   font-size: 18px;
   font-weight: 300;
+}
+
+.base-card {
+  width: 100%;
+  max-width: 550px;
+}
+.base-card__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 320px;
+  background-image: url("../assets/img/base-card-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid #9eff3e;
+  border-bottom: none;
+}
+.base-card__main img {
+  margin: auto;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 5/3;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.project-card__title {
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  color: var(--white);
+}
+.project-card__text {
+  font-size: 18px;
+  color: var(--white);
+}
+.project-card__link {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.review-card .base-card__main {
+  padding: 30px;
+}
+.review-card__content {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.review-card__text {
+  font-size: 18px;
+  color: var(--white);
+}
+.review-card__link {
+  font-size: 18px;
+  color: var(--primary);
+}
+.review-card__author {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 56px auto;
+  grid-template-columns: 56px auto;
+  grid-column-gap: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: auto;
+}
+.review-card__author-img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+.review-card__author-name {
+  font-family: var(--secondary-font);
+}
+.review-card__author-description {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
 }
 
 :root {
